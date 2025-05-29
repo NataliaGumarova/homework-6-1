@@ -48,7 +48,7 @@ public class Task1 {
             }
             return sMatrix;
         } else {
-            return null;
+            throw new RuntimeException("матрицы разного размера, невозможно сложить");
         }
     }
 
@@ -64,7 +64,9 @@ public class Task1 {
             }
             return mMatrix;
         } else {
-            return null;
+            throw new RuntimeException("длина столбца первой матрицы не равна" +
+                    " длине строки второй матрицы, " +
+                    "невозможно выполнить умножение");
         }
     }
 
@@ -79,7 +81,7 @@ public class Task1 {
     }
 
     static int determinantOfMatrix(int matrix[][]) {
-        if (matrix.length ==matrix[0].length) {
+        if (matrix.length == matrix[0].length) {
             int result = 0;
             if (matrix.length == 1) {
                 result = matrix[1][1];
@@ -104,7 +106,7 @@ public class Task1 {
                 return result;
             }
         } else {
-            return 0;
+            throw new RuntimeException("неправильный ввод, детерминант определён только для квадратных матриц");
         }
     }
     static void printMatrix(int matrix[][]) {
